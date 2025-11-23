@@ -141,10 +141,11 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
+        long hash = 0;
         for (int i = 0; i < arr.length; i++) {
-
+            hash += arr[i] * Math.pow(7, arr.length - i + 1);
         }
-        return 0;
+        return hash;
     }
 
     /**
