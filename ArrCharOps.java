@@ -11,7 +11,7 @@ public class ArrCharOps {
         System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(lastIndexOf(arr1, 'l'));
-        println(concat(arr1, arr2));
+        System.out.println(concat(arr1, arr2));
         println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
@@ -122,14 +122,14 @@ public class ArrCharOps {
      *  The sub-array begins at the specified beginIndex and extends to the character at index endIndex - 1.
      *  For example, if arr contains the characters "hamburger", then subArray(4, 8) returns an array of
      *  characters containing the characters "urge".
-     */     // [0,1,2] 2,4. {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
+     */     // [0,1,2] 2,4. {'U','n','d','e','r','s','t', 'o', 'o', 'd'}; 2 9
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
          // checks if fromIndex > arr
         if (beginIndex >= arr.length || endIndex >= arr.length) {
             return null;
         }
         char[] newArr = new char[endIndex - beginIndex];
-        for (int i = beginIndex; i < newArr.length; i++) {
+        for (int i = beginIndex; i < endIndex; i++) {
             newArr[i - beginIndex] = arr[i];
         }
         return newArr;
