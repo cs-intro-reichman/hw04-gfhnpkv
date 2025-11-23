@@ -125,9 +125,6 @@ public class ArrCharOps {
      */     // [0,1,2] 2,4. {'U','n','d','e','r','s','t', 'o', 'o', 'd'}; 2 9
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
          // checks if fromIndex > arr
-        if (beginIndex >= arr.length || endIndex >= arr.length) {
-            return null;
-        }
         char[] newArr = new char[endIndex - beginIndex];
         for (int i = beginIndex; i < endIndex; i++) {
             newArr[i - beginIndex] = arr[i];
