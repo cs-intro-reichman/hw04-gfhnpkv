@@ -15,21 +15,20 @@ public class Primes {
                     primes[i] = false; 
                 }
             }
-            prime = nextPrime(prime++ ,primes);
+            prime++;
+            boolean check = true;
+            while (check) {
+                if (primes[prime] == true) {
+                    check = false;
+                } else {
+                    prime++;
+                }
+            }
         }
         int numberOfPrimes = primes.length;
         int precent = (numberOfPrimes / max ) * 100 ;
         System.out.println("There are " + numberOfPrimes + " primes between " + min + " and " + max +
                              " (" + precent + "% are primes)");
-    }
-}
-public static int nextPrime(int prime, boolean[] primes) {
-    while (true) {
-        if (primes[prime] == true) {
-            return prime;
-        } else {
-            prime++;
-        }
-    }
-    return 1;
+        
+    } 
 }
