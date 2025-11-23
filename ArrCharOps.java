@@ -13,35 +13,16 @@ public class ArrCharOps {
         // System.out.println(lastIndexOf(arr1, 'l'));
         // System.out.println(concat(arr1, arr2));
         // println(subArray(arr2, 2, 9));
-        // System.out.println(compareTo("abcd", "abcd"));
-        // System.out.println(compareTo("abc", "abcd"));
-        // System.out.println(compareTo("abw", "abcd"));
-        // System.out.println(compareTo("Abcd", "a"));
-        // System.out.println(compareTo("apple", "banana"));
-        // System.out.println(compareTo("apple", "applepie"));
-        // System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        System.out.println(compareTo("abcd", "abcd"));
+        System.out.println(compareTo("abc", "abcd"));
+        System.out.println(compareTo("abw", "abcd"));
+        System.out.println(compareTo("Abcd", "a"));
+        System.out.println(compareTo("apple", "banana"));
+        System.out.println(compareTo("apple", "applepie"));
+        System.out.println(compareTo("Zoo", "zoo"));
+        // System.out.println(hashCode(arr1));
+        // System.out.println(hashCode(arr2));
     }
-    /**private static void testHashCode() {
-        int num_tests = 3;
-        System.out.println("Testing 'hashCode':");
-
-        char[] arr1 = {'a'};
-        char[] arr2 = "lemon".toCharArray();
-        char[] arr3 = {};
-
-        boolean test1 = ArrCharOps.hashCode(arr1) == (long) 97;
-        boolean test2 = ArrCharOps.hashCode(arr2) == (long) 300179;
-        boolean test3 = ArrCharOps.hashCode(arr3) == (long) 0;
-
-        int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0);
-        String verdict = passed == num_tests ? "(Passed)": "Failed";
-
-        System.out.println("Passed " + passed + "/" + num_tests + " tests " + verdict); 
-    } */
-    /** Prints the given array of characters, and moves the cursor to the next line.
-     */
     public static void println(char[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
@@ -189,8 +170,39 @@ public class ArrCharOps {
      *         lexicographically greater than str2.
      *         return -2 if there is an error with the input.
      */
+
+
+    
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
-        return 0;
+        // moving the smaller string to str2
+        int answer = 0;
+        boolean swap = false;
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        if (str2.length() > str1.length()) {
+            swap = true;
+            String save = str2;
+            str2 = str1;
+            str1 = save;
+        }
+        for (int i = 0; i < str2.length(); i++) {
+            if (str1.charAt(i) != str2.charAt(i)) {
+                if (str1.charAt(i) > str2.charAt(i)) {
+                    answer = 1;
+                } else {
+                    answer = -1;
+                }
+                return (swap) ? answer * -1 : answer;
+            }
+        }
+        if (str1.length() == str2.length()) {
+            return 0;
+        }
+        if (str1.length() > str2.length()) {
+            answer = 1;
+        } else {
+            answer = -1;
+        }
+        return (swap) ? answer * -1 : answer;
     }
 }
