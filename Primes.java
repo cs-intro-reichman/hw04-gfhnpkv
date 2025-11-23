@@ -7,7 +7,6 @@ public class Primes {
         boolean[] primes = new boolean[max + 1];
         primes[0] = false;
         primes [1] = false;
-        int count = min;
         int prime = 2;
         while (prime > Math.sqrt(max)) {
             for (int i = prime + 1; i < primes.length;i++) {
@@ -25,7 +24,12 @@ public class Primes {
                 }
             }
         }
-        int numberOfPrimes = primes.length;
+        int numberOfPrimes = 0;
+        for (int i = 0; i < primes.length; i++) {
+            if (primes[i] == true) {
+                numberOfPrimes++;
+            }
+        }
         int precent = (numberOfPrimes / max ) * 100 ;
         System.out.println("There are " + numberOfPrimes + " primes between " + min + " and " + max +
                              " (" + precent + "% are primes)");
