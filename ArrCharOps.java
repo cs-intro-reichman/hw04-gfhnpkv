@@ -20,6 +20,9 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
+        System.out.println(compareTo("abc", "abc")); // 0
+        System.out.println(compareTo("abc", "aBc")); //1
+        System.out.println(compareTo("abc", "abcd")); //-1
         // System.out.println(hashCode(arr1));
         // System.out.println(hashCode(arr2));
     }
@@ -177,8 +180,6 @@ public class ArrCharOps {
         // moving the smaller string to str2
         int answer = 0;
         boolean swap = false;
-        str1 = str1.toLowerCase();
-        str2 = str2.toLowerCase();
         if (str2.length() > str1.length()) {
             swap = true;
             String save = str2;
