@@ -7,7 +7,7 @@ public class MyString {
         // System.out.println("lowercase : " + lowerCase("lowercase"));
 
         System.out.println("Testing contains:");
-        System.out.println(contains("unhappy", "happy")); // true
+        System.out.println(contains("unhappy", "")); // true
         System.out.println(contains("happy", "unhappy")); // false
         System.out.println(contains("historical", "story")); // false
         System.out.println(contains("psychology", "psycho")); // true
@@ -23,6 +23,9 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
+        if (str2.length() == 0) {
+            return false;
+        }
         for (int i = 0; i < str1.length(); i++) {
             if (str1.charAt(i) == str2.charAt(0)) {
                 for (int j = 1; j < str2.length(); j++) {

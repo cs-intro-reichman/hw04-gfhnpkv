@@ -5,14 +5,14 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'a'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        // System.out.println(str);  // Prints the string
-        // println(arr1);            // Prints an array of characters
-        // System.out.println(charAt(arr1,2));      
-        // System.out.println(indexOf(arr1,'l'));  
-        // System.out.println(indexOf(arr1,'l',3)); 
-        // System.out.println(lastIndexOf(arr1, 'l'));
-        // System.out.println(concat(arr1, arr2));
-        // println(subArray(arr2, 2, 9));
+        System.out.println(str);  // Prints the string
+        println(arr1);            // Prints an array of characters
+        System.out.println(charAt(arr1,2));      
+        System.out.println(indexOf(arr1,'l'));  
+        System.out.println(indexOf(arr1,'l',3)); 
+        System.out.println(lastIndexOf(arr1, 'l'));
+        System.out.println(concat(arr1, arr2));
+        println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -23,8 +23,8 @@ public class ArrCharOps {
         System.out.println(compareTo("abc", "abc")); // 0
         System.out.println(compareTo("abc", "aBc")); //1
         System.out.println(compareTo("abc", "abcd")); //-1
-        // System.out.println(hashCode(arr1));
-        // System.out.println(hashCode(arr2));
+        System.out.println(hashCode(arr1));
+        System.out.println(hashCode(arr2));
     }
     public static void println(char[] arr) {
         for (int i = 0; i < arr.length; i++) {
