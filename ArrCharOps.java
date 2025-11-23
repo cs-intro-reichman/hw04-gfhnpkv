@@ -3,27 +3,43 @@
 public class ArrCharOps {
     public static void main(String[] args) {
         String str = "clearly";
-        char[] arr1 = {'c','l','e','a','r','l','y'};
+        char[] arr1 = {'a'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-        println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
-        System.out.println(indexOf(arr1,'l',3)); 
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        println(subArray(arr2, 2, 9));
-        System.out.println(compareTo("abcd", "abcd"));
-        System.out.println(compareTo("abc", "abcd"));
-        System.out.println(compareTo("abw", "abcd"));
-        System.out.println(compareTo("Abcd", "a"));
-        System.out.println(compareTo("apple", "banana"));
-        System.out.println(compareTo("apple", "applepie"));
-        System.out.println(compareTo("Zoo", "zoo"));
+        // System.out.println(str);  // Prints the string
+        // println(arr1);            // Prints an array of characters
+        // System.out.println(charAt(arr1,2));      
+        // System.out.println(indexOf(arr1,'l'));  
+        // System.out.println(indexOf(arr1,'l',3)); 
+        // System.out.println(lastIndexOf(arr1, 'l'));
+        // System.out.println(concat(arr1, arr2));
+        // println(subArray(arr2, 2, 9));
+        // System.out.println(compareTo("abcd", "abcd"));
+        // System.out.println(compareTo("abc", "abcd"));
+        // System.out.println(compareTo("abw", "abcd"));
+        // System.out.println(compareTo("Abcd", "a"));
+        // System.out.println(compareTo("apple", "banana"));
+        // System.out.println(compareTo("apple", "applepie"));
+        // System.out.println(compareTo("Zoo", "zoo"));
         System.out.println(hashCode(arr1));
         System.out.println(hashCode(arr2));
     }
+    /**private static void testHashCode() {
+        int num_tests = 3;
+        System.out.println("Testing 'hashCode':");
 
+        char[] arr1 = {'a'};
+        char[] arr2 = "lemon".toCharArray();
+        char[] arr3 = {};
+
+        boolean test1 = ArrCharOps.hashCode(arr1) == (long) 97;
+        boolean test2 = ArrCharOps.hashCode(arr2) == (long) 300179;
+        boolean test3 = ArrCharOps.hashCode(arr3) == (long) 0;
+
+        int passed = (test1 ? 1 : 0) + (test2 ? 1 : 0) + (test3 ? 1 : 0);
+        String verdict = passed == num_tests ? "(Passed)": "Failed";
+
+        System.out.println("Passed " + passed + "/" + num_tests + " tests " + verdict); 
+    } */
     /** Prints the given array of characters, and moves the cursor to the next line.
      */
     public static void println(char[] arr) {
@@ -143,7 +159,7 @@ public class ArrCharOps {
         // Replace the following statement with your code
         long hash = 0;
         for (int i = 0; i < arr.length; i++) {
-            hash += arr[i] * Math.pow(7, arr.length - i + 1);
+            hash += arr[i] * Math.pow(7, arr.length - (i + 1));
         }
         return hash;
     }
