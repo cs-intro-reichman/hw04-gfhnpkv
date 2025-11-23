@@ -11,8 +11,8 @@ public class ArrCharOps {
         System.out.println(indexOf(arr1,'l'));  
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
+        println(concat(arr1, arr2));
+        println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -94,7 +94,7 @@ public class ArrCharOps {
             return -1;
         }
         //checks if ch in arr [0,1,2] 
-        for (int i = arr.length - 1; i < 0; i--) {
+        for (int i = arr.length - 1; i >= 0; i--) {
             if (arr[i] == ch) {
                 return i;
             }
@@ -112,7 +112,7 @@ public class ArrCharOps {
             newArr[i] = arr1[i];
         }
         //adding second arry
-        for (int i = 0; i < arr1.length; i++) {
+        for (int i = 0; i < arr2.length; i++) {
             newArr[i + arr1.length] = arr2[i];
         }
         return newArr;
@@ -122,7 +122,7 @@ public class ArrCharOps {
      *  The sub-array begins at the specified beginIndex and extends to the character at index endIndex - 1.
      *  For example, if arr contains the characters "hamburger", then subArray(4, 8) returns an array of
      *  characters containing the characters "urge".
-     */     // [0,1,2,3] 2,4
+     */     // [0,1,2] 2,4. {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
          // checks if fromIndex > arr
         if (beginIndex >= arr.length || endIndex >= arr.length) {
@@ -130,7 +130,7 @@ public class ArrCharOps {
         }
         char[] newArr = new char[endIndex - beginIndex];
         for (int i = beginIndex; i < newArr.length; i++) {
-            newArr[i] = arr[i];
+            newArr[i - beginIndex] = arr[i];
         }
         return newArr;
     }
@@ -145,7 +145,7 @@ public class ArrCharOps {
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
         for (int i = 0; i < arr.length; i++) {
-            
+
         }
         return 0;
     }
