@@ -177,6 +177,10 @@ public class ArrCharOps {
 
     
     public static int compareTo(String str1, String str2) {
+        // checking error
+        if (str1.equals("") || str2.equals("")) {
+            return 2;
+        }
         // moving the smaller string to str2
         int answer = 0;
         boolean swap = false;
