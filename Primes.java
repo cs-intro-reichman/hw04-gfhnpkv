@@ -4,6 +4,7 @@ public class Primes {
 
         int min = 2;
         int max = Integer.parseInt(args[0]);
+        System.out.println("Prime numbers up to " + max + ":");
         boolean[] primes = new boolean[max + 1];
         int prime = 2;
         for (int i = 2; i < primes.length;i++) {
@@ -29,11 +30,13 @@ public class Primes {
         for (int i = 0; i < primes.length; i++) {
             if (primes[i] == true) {
                 numberOfPrimes++;
+                System.out.println(i);
             }
         }
         int precent = (int) (numberOfPrimes / max  * 100) ;
         System.out.println("There are " + (int)numberOfPrimes + " primes between " + min + " and " + max +
                              " (" + precent + "% are primes)");
         
+                             
     } 
 }
